@@ -1,13 +1,13 @@
 let video;
 let poseNet;
 let poses = [];
-let smoke
+let pepe
 
 function setup() {
   createCanvas(640, 480);
   video = createCapture(VIDEO);
   video.size(width, height);
-  smoke = loadImage('images/cigar.png');
+  pepe = loadImage('images/pepebien.png');
 
   // Create a new poseNet method with a single detection
   poseNet = ml5.poseNet(video, modelReady);
@@ -46,7 +46,7 @@ function drawKeypoints()  {
         fill(255, 0, 0);
         noStroke();
         ellipse(keypoint.position.x, keypoint.position.y, 10, 10);
-        image(smoke, keypoint.position.x, keypoint.position.y, 10, 10);
+        image(pepe, keypoint.position.x, keypoint.position.y, 10, 10);
       }
     }
   }
