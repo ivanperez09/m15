@@ -47,7 +47,9 @@ function drawKeypoints()  {
         noStroke();
         //ellipse(keypoint.position.x, keypoint.position.y, 10, 10);
         image(pepe, keypoint.position.x, keypoint.position.y, 30, 30);
+        
       }
+      image(pepe, keypoint.position.x+30, keypoint.position.y-70, 30, 30);
     }
   }
 }
