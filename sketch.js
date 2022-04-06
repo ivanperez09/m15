@@ -7,7 +7,7 @@ function setup() {
   createCanvas(640, 480);
   video = createCapture(VIDEO);
   video.size(width, height);
-  pepe = loadImage('images/pepebien.png');
+  pepe = loadImage('images/image1.png');
 
   // Create a new poseNet method with a single detection
   poseNet = ml5.poseNet(video, modelReady);
