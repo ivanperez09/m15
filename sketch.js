@@ -82,7 +82,7 @@ let posenet;
 let nose
 let eyes
 let leftear
-let rightea
+let rightear
 let singlePose,skeleton;
 let actor_img;
 let specs,smoke;
