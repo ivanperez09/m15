@@ -135,11 +135,11 @@ function draw() {
             line(skeleton[j][0].position.x, skeleton[j][0].position.y, skeleton[j][1].position.x, skeleton[j][1].position.y);
         }
 
-        image(rareeyes, keypoint.leftEye.x, keypoint.leftEye.y, 30, 30);
-        image(rareeyes, keypoint.rightEye.x, keypoint.rightEye.y, 30, 30);
-        image(noseclown, keypoint.nose.x, keypoint.nose.y, 30, 30);
-        image(leftairpod, keypoint.leftEar.x, keypoint.leftEar.y, 30, 30);
-        image(rightairpod, keypoint.rightEar.x, keypoint.rightEar.y, 30, 30);
+        image(rareeyes, singlePose.leftEye.x, singlePose.leftEye.y, 30, 30);
+        image(rareeyes, singlePose.rightEye.x, singlePose.rightEye.y, 30, 30);
+        image(noseclown, singlePose.nose.x, singlePose.nose.y, 30, 30);
+        image(leftairpod, singlePose.leftEar.x, singlePose.leftEar.y, 30, 30);
+        image(rightairpod, singlePose.rightEar.x, singlePose.rightEar.y, 30, 30);
     }
     
   }
