@@ -1,22 +1,29 @@
 let video;
 let poseNet;
 let poses = [];
-let pepe
+let nose
+let eyes
+let leftear
+let rightear
+
 
 function setup() {
   createCanvas(640, 480);
   video = createCapture(VIDEO);
   video.size(width, height);
-  pepe = loadImage('images/image1.png');
+  eyes = loadImage('images/eyes.png');
+  nose = loadImage('images/nose.png');
+  leftear = loadImage('images/leftear.png');
+  rightear = loadImage('images/rightear.png');
 
-  // Create a new poseNet method with a single detection
+
   poseNet = ml5.poseNet(video, modelReady);
-  // This sets up an event that fills the global variable "poses"
-  // with an array every time new poses are detected
+
+
   poseNet.on('pose', function(results) {
     poses = results;
   });
-  // Hide the video element, and just show the canvas
+
   video.hide();
 }
 
@@ -27,39 +34,41 @@ function modelReady() {
 function draw() {
   image(video, 0, 0, width, height);
 
-  // We can call both functions to draw all keypoints and the skeletons
+
   drawKeypoints();
   drawSkeleton();
 }
 
-// A function to draw ellipses over the detected keypoints
+
 function drawKeypoints()  {
-  // Loop through all the poses detected
+
   for (let i = 0; i < poses.length; i++) {
-      // For each pose detected, loop through all the keypoints
+
       let pose = poses[i].pose;
       for (let j = 0; j < pose.keypoints.length; j++) {
-      // A keypoint is an object describing a body part (like rightArm or leftShoulder)
+
       let keypoint = pose.keypoints[j];
-      // Only draw an ellipse is the pose probability is bigger than 0.2
+
       if (keypoint.score > 0.2) {
         fill(255, 0, 0);
         noStroke();
-        //ellipse(keypoint.position.x, keypoint.position.y, 10, 10);
-        image(pepe, keypoint.position.x, keypoint.position.y, 30, 30);
+        image(eyes, keypoint.leftEye.x, keypoint.leftEye.y, 30, 30);
+        image(eyes, keypoint.rightEye.x, keypoint.rightEye.y, 30, 30);
+        image(nose, keypoint.nose.x, keypoint.nose.y, 30, 30);
+        image(leftear, keypoint.leftEar.x, keypoint.leftEar.y, 30, 30);
+        image(rightear, keypoint.rightEar.x, keypoint.rightEar.y, 30, 30);
         
       }
-      image(pepe, keypoint.position.x+30, keypoint.position.y-70, 30, 30);
     }
   }
 }
 
-// A function to draw the skeletons
+
 function drawSkeleton() {
-  // Loop through all the skeletons detected
+
   for (let i = 0; i < poses.length; i++) {
     let skeleton = poses[i].skeleton;
-    // For every skeleton, loop through all body connections
+
     for (let j = 0; j < skeleton.length; j++) {
       let partA = skeleton[j][0];
       let partB = skeleton[j][1];
