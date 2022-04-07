@@ -52,13 +52,13 @@ function drawKeypoints()  {
       if (keypoint.score > 0.2) {
         fill(255, 0, 0);
         noStroke();
-        image(eyes, keypoint.leftEye.x, keypoint.leftEye.y, 30, 30);
-        image(eyes, keypoint.rightEye.x, keypoint.rightEye.y, 30, 30);
-        image(nose, keypoint.nose.x, keypoint.nose.y, 30, 30);
-        image(leftear, keypoint.leftEar.x, keypoint.leftEar.y, 30, 30);
-        image(rightear, keypoint.rightEar.x, keypoint.rightEar.y, 30, 30);
-        
       }
+      image(eyes, keypoint.leftEye.x, keypoint.leftEye.y, 30, 30);
+      image(eyes, keypoint.rightEye.x, keypoint.rightEye.y, 30, 30);
+      image(nose, keypoint.nose.x, keypoint.nose.y, 30, 30);
+      image(leftear, keypoint.leftEar.x, keypoint.leftEar.y, 30, 30);
+      image(rightear, keypoint.rightEar.x, keypoint.rightEar.y, 30, 30);
+      
     }
   }
 }
