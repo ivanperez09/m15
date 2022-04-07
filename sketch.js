@@ -98,10 +98,10 @@ function setup() {  // this function runs only once while running
     posenet = ml5.poseNet(capture, modelLOADED);
     posenet.on('pose', recievedPoses);
 
-    eyes = loadImage('images/eyes.png');
-    nose = loadImage('images/nose.png');
-    leftear = loadImage('images/leftear.png');
-    rightear = loadImage('images/rightear.png');
+    rareeyes = loadImage('images/eyes.png');
+    noseclown = loadImage('images/nose.png');
+    leftairpod = loadImage('images/leftear.png');
+    rightairpod = loadImage('images/rightear.png');
 }
 
 function recievedPoses(poses) {
