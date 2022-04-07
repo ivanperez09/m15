@@ -89,13 +89,10 @@ let specs,smoke;
 
 function setup() {  // this function runs only once while running
     createCanvas(800, 500);
-    //console.log("setup funct");
     capture = createCapture(VIDEO);
     capture.hide();
 
-    //load the PoseNet model
     posenet = ml5.poseNet(capture, modelLOADED);
-    //detect pose
     posenet.on('pose', recievedPoses);
 
     eyes = loadImage('images/eyes.png');
@@ -139,7 +136,7 @@ function draw() {
         image(eyes, keypoint.rightEye.x+1, keypoint.rightEye.y+1, 30, 30);
         image(nose, keypoint.nose.x+1, keypoint.nose.y+1, 30, 30);
         image(leftear, keypoint.leftEar.x+1, keypoint.leftEar.y+1, 30, 30);
-        image(rightear, keypoint.rightEar.x+1, keypoint.rightEar.y+1, 30, 30);;
+        image(rightear, keypoint.rightEar.x+1, keypoint.rightEar.y+1, 30, 30);
     }
     
   }
