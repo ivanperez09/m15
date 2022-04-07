@@ -81,6 +81,9 @@ let capture;
 let posenet;
 let nose
 let eyes
+let noseX,noseY;
+let reyeX,reyeY;
+let leyeX,leyeY;
 let leftear
 let rightear
 let singlePose,skeleton;
