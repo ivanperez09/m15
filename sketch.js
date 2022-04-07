@@ -79,13 +79,13 @@ function drawSkeleton() {
 
 let capture;
 let posenet;
-let nose
-let eyes
+let noseclown
+let rareeyes
 let noseX,noseY;
 let reyeX,reyeY;
 let leyeX,leyeY;
-let leftear
-let rightear
+let leftairpod
+let rightairpod
 let singlePose,skeleton;
 let actor_img;
 let specs,smoke;
@@ -135,11 +135,11 @@ function draw() {
             line(skeleton[j][0].position.x, skeleton[j][0].position.y, skeleton[j][1].position.x, skeleton[j][1].position.y);
         }
 
-        image(eyes, keypoint.leftEye.x+1, keypoint.leftEye.y+1, 30, 30);
-        image(eyes, keypoint.rightEye.x+1, keypoint.rightEye.y+1, 30, 30);
-        image(nose, keypoint.nose.x+1, keypoint.nose.y+1, 30, 30);
-        image(leftear, keypoint.leftEar.x+1, keypoint.leftEar.y+1, 30, 30);
-        image(rightear, keypoint.rightEar.x+1, keypoint.rightEar.y+1, 30, 30);
+        image(rareeyes, keypoint.leftEye.x+1, keypoint.leftEye.y+1, 30, 30);
+        image(rareeyes, keypoint.rightEye.x+1, keypoint.rightEye.y+1, 30, 30);
+        image(noseclown, keypoint.nose.x+1, keypoint.nose.y+1, 30, 30);
+        image(leftairpod, keypoint.leftEar.x+1, keypoint.leftEar.y+1, 30, 30);
+        image(rightairpod, keypoint.rightEar.x+1, keypoint.rightEar.y+1, 30, 30);
     }
     
   }
